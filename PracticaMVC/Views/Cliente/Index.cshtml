@@ -1,0 +1,41 @@
+﻿@model List<PracticaMVC.Models.Cliente>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<div style="margin: 80px auto; width: 500px;">
+    <a href="@Url.Action("RegistraUsuario", "Cliente")"><input type="button" value="Agregar cliente" /></a>
+    <br />
+    <br />
+    <table style="border-collapse: collapse; border: 1px solid #dddddd;">
+        <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var dato in Model){
+                <tr>
+                    <td>@dato.Documento</td>
+                    <td>@dato.Nombre</td>
+                    <td>@dato.Apellido</td>
+                    <td>@dato.Celular</td>
+                    <td>@dato.Correo</td>
+                    <td>@dato.Usuario</td>
+                    <td>@dato.Contrasena</td>
+                    <td><a href="@Url.Action("ActualizaUsuario", "Cliente", new { doc = dato.Documento })"><input type="button" value="Editar" /></a></td>
+                    <td><a href="@Url.Action("EliminaRegistroUsuario", "Cliente", new { doc = dato.Documento })"><input type="button" value="Eliminar" /></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

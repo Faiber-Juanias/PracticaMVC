@@ -1,0 +1,45 @@
+﻿@model PracticaMVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Actualiza Usuario";
+}
+
+<div style="margin: 80px auto; width: 500px;">
+    <h3 style="text-align: center;">ACTUALIZACIÓN DE CLIENTES</h3>
+    <form action="@Url.Action("ActualizaRegistroUsuario", "Cliente")" method="post">
+        <table style="border-collapse: collapse; border: 1px solid #dddddd; margin: auto">
+            <tr style="display: none">
+                <td><label>Documento:</label></td>
+                <td><label><input type="text" name="documento" placeholder="Documento" value="@Model.Documento" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Nombre:</label></td>
+                <td><label><input type="text" name="nombre" placeholder="Nombre" value="@Model.Nombre" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Apellido:</label></td>
+                <td><label><input type="text" name="apellido" placeholder="Apellido" value="@Model.Apellido" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Celular:</label></td>
+                <td><label><input type="number" name="celular" placeholder="Celular" value="@Model.Celular" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Correo:</label></td>
+                <td><label><input type="email" name="correo" placeholder="Correo" value="@Model.Correo" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Usuario:</label></td>
+                <td><label><input type="text" name="usuario" placeholder="Usuario" value="@Model.Usuario" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Contraseña:</label></td>
+                <td><label><input type="password" name="contrasena" placeholder="Contraseña" value="@Model.Contrasena" /></label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="envia_registro" value="Actualizar cliente" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+

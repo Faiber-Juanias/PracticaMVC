@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "RegistraUsuario";
+}
+
+<div style="margin: 80px auto; width: 500px;">
+    <h3 style="text-align: center;">REGISTRO DE CLIENTES</h3>
+    <form action="@Url.Action("RecibeRegistroUsuario", "Cliente")" method="post">
+        <table style="border-collapse: collapse; border: 1px solid #dddddd; margin: auto">
+            <tr>
+                <td><label>Documento:</label></td>
+                <td><label><input type="text" name="documento" placeholder="Documento" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Nombre:</label></td>
+                <td><label><input type="text" name="nombre" placeholder="Nombre" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Apellido:</label></td>
+                <td><label><input type="text" name="apellido" placeholder="Apellido" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Celular:</label></td>
+                <td><label><input type="number" name="celular" placeholder="Celular" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Correo:</label></td>
+                <td><label><input type="email" name="correo" placeholder="Correo" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Usuario:</label></td>
+                <td><label><input type="text" name="usuario" placeholder="Usuario" /></label></td>
+            </tr>
+            <tr>
+                <td><label>Contraseña:</label></td>
+                <td><label><input type="password" name="contrasena" placeholder="Contraseña" /></label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="envia_registro" value="Registrar cliente" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
