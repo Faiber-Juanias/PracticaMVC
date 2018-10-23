@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using PracticaMVC.Entidad;
 
 namespace PracticaMVC.Models
 {
@@ -42,10 +43,13 @@ namespace PracticaMVC.Models
         public List<Cliente> TraeListaClientes()
         {
             listaClientes = new List<Cliente>();
-            objCliente = new Cliente();
-            TraeCliente();
+            
+            //objCliente = new Cliente();
+            
             if (TraeCliente() != null)
             {
+                listaClientes = clsExtension.DataTableToList<Cliente>(TraeCliente());
+                /*
                 foreach (DataRow fila in objDataTable.Rows)
                 {
                     objCliente = new Cliente();
@@ -57,7 +61,7 @@ namespace PracticaMVC.Models
                     objCliente.Usuario = fila["Usuario"].ToString();
                     objCliente.Contrasena = fila["Contrasena"].ToString();
                     listaClientes.Add(objCliente);
-                }
+                }*/
             }
             return listaClientes;
         }
