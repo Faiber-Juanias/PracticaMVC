@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using PracticaMVC.Models;
+using System.Data;
 
 namespace ServiceLogin
 {
@@ -14,7 +15,22 @@ namespace ServiceLogin
     public interface IServiceLoginClass
     {
         [OperationContract]
-        List<Cliente> traeClientes();
+        List<Cliente> TraeListaClientes();
+
+        [OperationContract]
+        bool RecibeRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+
+        [OperationContract]
+        bool EliminaRegistro(string documento);
+
+        [OperationContract]
+        bool ActualizaRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+
+        [OperationContract]
+        Cliente TraeActualizarRegistro(string documento);
+
+        [OperationContract]
+        bool traeLogin(string usuario, string contrasena);
     }
 
 

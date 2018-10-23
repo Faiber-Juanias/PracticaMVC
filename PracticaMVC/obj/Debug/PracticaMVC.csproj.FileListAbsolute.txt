@@ -29,4 +29,3 @@ c:\users\faiber.juanias\documents\visual studio 2013\Projects\PracticaMVC\Practi
 c:\users\faiber.juanias\documents\visual studio 2013\Projects\PracticaMVC\PracticaMVC\bin\System.Web.WebPages.Razor.xml
 c:\users\faiber.juanias\documents\visual studio 2013\Projects\PracticaMVC\PracticaMVC\obj\Debug\PracticaMVC.dll
 c:\users\faiber.juanias\documents\visual studio 2013\Projects\PracticaMVC\PracticaMVC\obj\Debug\PracticaMVC.pdb
-C:\Users\faiber.juanias\Documents\Visual Studio 2013\Projects\PracticaMVC\PracticaMVC\obj\Debug\PracticaMVC.csprojResolveAssemblyReference.cache

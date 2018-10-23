@@ -29,6 +29,9 @@ namespace PracticaMVC.ServicioLogin {
         private string CelularField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContrasenaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CorreoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -36,6 +39,9 @@ namespace PracticaMVC.ServicioLogin {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -69,6 +75,19 @@ namespace PracticaMVC.ServicioLogin {
                 if ((object.ReferenceEquals(this.CelularField, value) != true)) {
                     this.CelularField = value;
                     this.RaisePropertyChanged("Celular");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contrasena {
+            get {
+                return this.ContrasenaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContrasenaField, value) != true)) {
+                    this.ContrasenaField = value;
+                    this.RaisePropertyChanged("Contrasena");
                 }
             }
         }
@@ -112,6 +131,19 @@ namespace PracticaMVC.ServicioLogin {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -126,11 +158,41 @@ namespace PracticaMVC.ServicioLogin {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioLogin.IServiceLoginClass")]
     public interface IServiceLoginClass {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/traeClientes", ReplyAction="http://tempuri.org/IServiceLoginClass/traeClientesResponse")]
-        System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente> traeClientes();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/TraeListaClientes", ReplyAction="http://tempuri.org/IServiceLoginClass/TraeListaClientesResponse")]
+        System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente> TraeListaClientes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/traeClientes", ReplyAction="http://tempuri.org/IServiceLoginClass/traeClientesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente>> traeClientesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/TraeListaClientes", ReplyAction="http://tempuri.org/IServiceLoginClass/TraeListaClientesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente>> TraeListaClientesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/RecibeRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/RecibeRegistroResponse")]
+        bool RecibeRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/RecibeRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/RecibeRegistroResponse")]
+        System.Threading.Tasks.Task<bool> RecibeRegistroAsync(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/EliminaRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/EliminaRegistroResponse")]
+        bool EliminaRegistro(string documento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/EliminaRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/EliminaRegistroResponse")]
+        System.Threading.Tasks.Task<bool> EliminaRegistroAsync(string documento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/ActualizaRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/ActualizaRegistroResponse")]
+        bool ActualizaRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/ActualizaRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/ActualizaRegistroResponse")]
+        System.Threading.Tasks.Task<bool> ActualizaRegistroAsync(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistroResponse")]
+        PracticaMVC.ServicioLogin.Cliente TraeActualizarRegistro(string documento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistro", ReplyAction="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistroResponse")]
+        System.Threading.Tasks.Task<PracticaMVC.ServicioLogin.Cliente> TraeActualizarRegistroAsync(string documento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/traeLogin", ReplyAction="http://tempuri.org/IServiceLoginClass/traeLoginResponse")]
+        bool traeLogin(string usuario, string contrasena);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceLoginClass/traeLogin", ReplyAction="http://tempuri.org/IServiceLoginClass/traeLoginResponse")]
+        System.Threading.Tasks.Task<bool> traeLoginAsync(string usuario, string contrasena);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -160,12 +222,52 @@ namespace PracticaMVC.ServicioLogin {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente> traeClientes() {
-            return base.Channel.traeClientes();
+        public System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente> TraeListaClientes() {
+            return base.Channel.TraeListaClientes();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente>> traeClientesAsync() {
-            return base.Channel.traeClientesAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<PracticaMVC.ServicioLogin.Cliente>> TraeListaClientesAsync() {
+            return base.Channel.TraeListaClientesAsync();
+        }
+        
+        public bool RecibeRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena) {
+            return base.Channel.RecibeRegistro(documento, nombre, apellido, celular, correo, usuario, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RecibeRegistroAsync(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena) {
+            return base.Channel.RecibeRegistroAsync(documento, nombre, apellido, celular, correo, usuario, contrasena);
+        }
+        
+        public bool EliminaRegistro(string documento) {
+            return base.Channel.EliminaRegistro(documento);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminaRegistroAsync(string documento) {
+            return base.Channel.EliminaRegistroAsync(documento);
+        }
+        
+        public bool ActualizaRegistro(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena) {
+            return base.Channel.ActualizaRegistro(documento, nombre, apellido, celular, correo, usuario, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ActualizaRegistroAsync(string documento, string nombre, string apellido, string celular, string correo, string usuario, string contrasena) {
+            return base.Channel.ActualizaRegistroAsync(documento, nombre, apellido, celular, correo, usuario, contrasena);
+        }
+        
+        public PracticaMVC.ServicioLogin.Cliente TraeActualizarRegistro(string documento) {
+            return base.Channel.TraeActualizarRegistro(documento);
+        }
+        
+        public System.Threading.Tasks.Task<PracticaMVC.ServicioLogin.Cliente> TraeActualizarRegistroAsync(string documento) {
+            return base.Channel.TraeActualizarRegistroAsync(documento);
+        }
+        
+        public bool traeLogin(string usuario, string contrasena) {
+            return base.Channel.traeLogin(usuario, contrasena);
+        }
+        
+        public System.Threading.Tasks.Task<bool> traeLoginAsync(string usuario, string contrasena) {
+            return base.Channel.traeLoginAsync(usuario, contrasena);
         }
     }
 }

@@ -25,7 +25,7 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="ServiceLoginClass.wsdl" MetadataType="Wsdl" ID="452b1bd4-24fe-4729-9883-0752b6f9f65e" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?wsdl" />
-    <MetadataFile FileName="ServiceLoginClass.xsd" MetadataType="Schema" ID="fe5ecefc-a325-4475-83c2-ebaed57b29db" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLoginClass.xsd" MetadataType="Schema" ID="b332bff6-a6ee-4420-9ea5-408bba028190" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceLoginClass.disco" MetadataType="Disco" ID="fc592832-78c1-4cd0-a323-dee1cdf76546" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?disco" />
     <MetadataFile FileName="ServiceLoginClass1.xsd" MetadataType="Schema" ID="741d7f18-8220-472b-a929-1e50a17eac10" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd0" />
     <MetadataFile FileName="ServiceLoginClass2.xsd" MetadataType="Schema" ID="634774e3-af30-4e39-b31a-af80de6b3339" SourceId="1" SourceUrl="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd1" />

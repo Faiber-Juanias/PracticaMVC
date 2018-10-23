@@ -1,15 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PracticaMVC.Models" />
-  <xs:element name="traeClientes">
+  <xs:element name="TraeListaClientes">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="traeClientesResponse">
+  <xs:element name="TraeListaClientesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PracticaMVC.Models" minOccurs="0" name="traeClientesResult" nillable="true" type="q1:ArrayOfCliente" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PracticaMVC.Models" minOccurs="0" name="TraeListaClientesResult" nillable="true" type="q1:ArrayOfCliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecibeRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecibeRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecibeRegistroResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminaRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminaRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminaRegistroResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizaRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="celular" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizaRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizaRegistroResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeActualizarRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeActualizarRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PracticaMVC.Models" minOccurs="0" name="TraeActualizarRegistroResult" nillable="true" type="q2:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="traeLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="traeLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="traeLoginResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

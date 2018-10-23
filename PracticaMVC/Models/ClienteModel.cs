@@ -130,5 +130,23 @@ namespace PracticaMVC.Models
             adapter.Fill(objDataTable);
             return objDataTable;
         }
+
+        public bool TraeLoginCliente(string usuario, string contrasena)
+        {
+            objDataTable = new DataTable();
+            objCommand = new SqlCommand();
+            objCommand.Connection = conexion;
+            objCommand.CommandText = "dbo.TraeLogin";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Parameters.Add("@Usuario", SqlDbType.VarChar, 30).Value = usuario;
+            objCommand.Parameters.Add("@Contrasena", SqlDbType.VarChar, 30).Value = contrasena;
+            SqlDataAdapter adapter = new SqlDataAdapter(objCommand);
+            adapter.Fill(objDataTable);
+            if (objDataTable.Rows.Count != 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

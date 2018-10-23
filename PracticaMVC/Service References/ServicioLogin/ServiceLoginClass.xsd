@@ -10,9 +10,11 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contrasena" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Cliente" nillable="true" type="tns:Cliente" />

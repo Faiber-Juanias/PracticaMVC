@@ -7,22 +7,117 @@
       <xsd:import schemaLocation="http://localhost:49661/ServiceLoginClass.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PracticaMVC.Models" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServiceLoginClass_traeClientes_InputMessage">
-    <wsdl:part name="parameters" element="tns:traeClientes" />
+  <wsdl:message name="IServiceLoginClass_TraeListaClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaClientes" />
   </wsdl:message>
-  <wsdl:message name="IServiceLoginClass_traeClientes_OutputMessage">
-    <wsdl:part name="parameters" element="tns:traeClientesResponse" />
+  <wsdl:message name="IServiceLoginClass_TraeListaClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_RecibeRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecibeRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_RecibeRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecibeRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_EliminaRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_EliminaRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_ActualizaRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_ActualizaRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_TraeActualizarRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraeActualizarRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_TraeActualizarRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraeActualizarRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_traeLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:traeLogin" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLoginClass_traeLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:traeLoginResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceLoginClass">
-    <wsdl:operation name="traeClientes">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/traeClientes" message="tns:IServiceLoginClass_traeClientes_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/traeClientesResponse" message="tns:IServiceLoginClass_traeClientes_OutputMessage" />
+    <wsdl:operation name="TraeListaClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/TraeListaClientes" message="tns:IServiceLoginClass_TraeListaClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/TraeListaClientesResponse" message="tns:IServiceLoginClass_TraeListaClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibeRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/RecibeRegistro" message="tns:IServiceLoginClass_RecibeRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/RecibeRegistroResponse" message="tns:IServiceLoginClass_RecibeRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/EliminaRegistro" message="tns:IServiceLoginClass_EliminaRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/EliminaRegistroResponse" message="tns:IServiceLoginClass_EliminaRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/ActualizaRegistro" message="tns:IServiceLoginClass_ActualizaRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/ActualizaRegistroResponse" message="tns:IServiceLoginClass_ActualizaRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeActualizarRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistro" message="tns:IServiceLoginClass_TraeActualizarRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistroResponse" message="tns:IServiceLoginClass_TraeActualizarRegistro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="traeLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLoginClass/traeLogin" message="tns:IServiceLoginClass_traeLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLoginClass/traeLoginResponse" message="tns:IServiceLoginClass_traeLogin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceLoginClass" type="tns:IServiceLoginClass">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="traeClientes">
-      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/traeClientes" style="document" />
+    <wsdl:operation name="TraeListaClientes">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/TraeListaClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibeRegistro">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/RecibeRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaRegistro">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/EliminaRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaRegistro">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/ActualizaRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeActualizarRegistro">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/TraeActualizarRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traeLogin">
+      <soap:operation soapAction="http://tempuri.org/IServiceLoginClass/traeLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
